@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DL IPTV — Premium Television for Ethiopia | Wholesale Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e17; --bg2: #111620; --card: #151a25; --border: #1e2736;
+  --text: #edf2f7; --text2: #b0bec5; --muted: #6b7d8e;
+  --blue: #3b82f6; --red: #ef4444; --green: #22c55e;
+  --purple: #a855f7; --amber: #f59e0b; --teal: #14b8a6;
+  --r: 18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* ===== KEYFRAMES ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 24px rgba(59,130,246,.15)}50%{box-shadow:0 0 50px rgba(59,130,246,.4)}}
+@keyframes posterFloat{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-8px) rotate(.5deg)}75%{transform:translateY(4px) rotate(-.5deg)}}
+@keyframes cardReveal{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+.anim{animation:fadeUp .7s ease-out both}
+.anim.d1{animation-delay:.1s}.anim.d2{animation-delay:.2s}.anim.d3{animation-delay:.3s}.anim.d4{animation-delay:.4s}.anim.d5{animation-delay:.5s}.anim.d6{animation-delay:.6s}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,14,23,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 24px}
+nav .logo{font-size:1.5rem;font-weight:900;letter-spacing:-.5px;display:flex;align-items:center;gap:6px}
+nav .logo .dl{background:linear-gradient(135deg,#3b82f6,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav .logo .mag{background:linear-gradient(135deg,#ef4444,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+
+
+nav .links{display:flex;gap:28px;align-items:center}
+nav .links a{color:var(--text2);text-decoration:none;font-weight:500;font-size:.88rem;transition:color .2s}
+nav .links a:hover{color:#fff}
+nav .btn-nav{background:linear-gradient(135deg,var(--blue),#6366f1);color:#fff!important;padding:10px 24px;border-radius:24px;font-weight:700;font-size:.85rem;transition:all .25s;box-shadow:0 4px 16px rgba(59,130,246,.3)}
+nav .btn-nav:hover{transform:scale(1.05)}
+
+/* ===== HERO (with BG image) ===== */
+.hero{position:relative;padding:180px 24px 130px;text-align:center;overflow:hidden;
+  background:linear-gradient(180deg,rgba(10,14,23,.7) 0%,rgba(10,14,23,.4) 50%,rgba(10,14,23,.85) 100%),
+             url('images/backgrounds/hero-bg.jpg') center/cover no-repeat;
+  /* fallback if no image */
+  background-color:#0a0e17;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 400px at 50% 0%,rgba(59,130,246,.12) 0%,transparent 70%),radial-gradient(ellipse 500px 300px at 20% 100%,rgba(239,68,68,.08) 0%,transparent 70%);z-index:0}
+.hero>*{position:relative;z-index:1}
+.hero .pip{display:inline-flex;align-items:center;gap:8px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.2);padding:9px 22px;border-radius:30px;font-size:.84rem;font-weight:600;color:#fca5a5;margin-bottom:28px}
+.hero .pip .d{width:8px;height:8px;background:var(--red);border-radius:50%;animation:pulse 1.5s infinite}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:900;line-height:1.06;letter-spacing:-2.5px;margin-bottom:20px}
+.hero h1 .gr{background:linear-gradient(135deg,#3b82f6,#22c55e,#f59e0b,#ef4444);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradShift 5s ease infinite}
+.hero .sub{font-size:1.2rem;color:var(--text2);max-width:640px;margin:0 auto 40px;line-height:1.7}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+.btn-grad{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),#6366f1);color:#fff;padding:17px 40px;border-radius:30px;text-decoration:none;font-weight:700;font-size:1.02rem;transition:all .3s;box-shadow:0 8px 28px rgba(59,130,246,.35)}
+.btn-grad:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(59,130,246,.5)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:2px solid #2d3a4f;color:var(--text);padding:17px 40px;border-radius:30px;text-decoration:none;font-weight:600;font-size:1.02rem;transition:all .3s}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);background:rgba(59,130,246,.05)}
+
+.devices{display:flex;justify-content:center;gap:24px;margin-top:50px;flex-wrap:wrap}
+.device{background:rgba(21,26,37,.7);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:var(--r);padding:20px 28px;display:flex;align-items:center;gap:12px;font-weight:600;font-size:.88rem;color:var(--text2);animation:float 4s ease-in-out infinite}
+.device:nth-child(2){animation-delay:.5s}.device:nth-child(3){animation-delay:1s}.device:nth-child(4){animation-delay:1.5s}
+.device .emoji{font-size:1.8rem}
+
+/* ===== TICKER ===== */
+.ticker-wrap{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:13px 0}
+.ticker{display:flex;gap:36px;animation:ticker 20s linear infinite;white-space:nowrap;font-size:.84rem;font-weight:600}
+.ticker .live{color:var(--red);font-weight:700}.ticker .lg{color:var(--blue);font-weight:700}
+
+/* ===== STATS ===== */
+.stats-row{display:flex;flex-wrap:wrap;justify-content:center;gap:50px;padding:60px 24px 70px;max-width:1000px;margin:0 auto}
+.stat{text-align:center}.stat .n{font-size:3.2rem;font-weight:900;letter-spacing:-1px;line-height:1}
+.stat .n.s1{background:linear-gradient(135deg,#3b82f6,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .n.s2{background:linear-gradient(135deg,#ef4444,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .n.s3{background:linear-gradient(135deg,#22c55e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .n.s4{background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat .l{color:var(--muted);font-size:.88rem;margin-top:8px;font-weight:500}
+
+/* ===== NETWORK LOGOS (image + fallback) ===== */
+.nets{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:1100px;margin:0 auto 30px}
+.nb{display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;transition:all .3s;cursor:default}
+.nb:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.nb .ni{width:auto;height:40px;max-width:130px;border-radius:4px;object-fit:contain;flex-shrink:0}
+.nb .nf{width:28px;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:900;color:#fff;flex-shrink:0}
+.nf-sky{background:#0076d1}.nf-tnt{background:#1a1a1a;border:1.5px solid #e31837;color:#e31837}
+.nf-bein{background:#1a1a1a;color:#c8a82a}.nf-espn{background:#d00}.nf-bbc{background:#000;border:2px solid #555}
+.nf-hbo{background:#8c5cf7}.nf-cnn{background:#c00}.nf-fox{background:#003399}.nf-nbc{background:#379058}
+.nf-disney{background:#113ccf}.nf-nick{background:#f47920}.nf-cn{background:#000;border:2px solid #666}
+.nf-show{background:#b50c17}.nf-disc{background:#1a3a5c}.nf-ng{background:#ffc107;color:#000}
+.nf-dazn{background:#0a0d16;color:#f6f7ac}.nf-euro{background:#004e99;color:#ffc907}
+.nf-amc{background:#222;color:#ffc107}.nf-starz{background:#000;color:#e6b31e}.nf-cbs{background:#2660a8}
+
+/* ===== SECTION ===== */
+.sec{position:relative;padding:100px 24px;overflow:hidden}
+.sec-header{text-align:center;margin-bottom:60px;position:relative;z-index:1}
+.sec-header .tag{display:inline-block;text-transform:uppercase;letter-spacing:3px;font-size:.76rem;font-weight:700;color:var(--blue);margin-bottom:14px;background:rgba(59,130,246,.08);padding:6px 16px;border-radius:20px}
+.sec-header h2{font-size:2.5rem;font-weight:900;letter-spacing:-1px;margin-bottom:12px}
+.sec-header p{color:var(--text2);font-size:1.05rem;max-width:540px;margin:0 auto}
+
+/* ===== CATEGORY CARDS ===== */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:22px;position:relative;z-index:1}
+.ccard{background:rgba(21,26,37,.85);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:34px 30px;transition:all .35s;position:relative;overflow:hidden}
+.ccard:hover{transform:translateY(-5px);border-color:#334155;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.ccard::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px}
+.ccard .emoji{font-size:2.6rem;margin-bottom:16px;display:block}
+.ccard h3{font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.ccard .count{font-weight:700;font-size:.85rem;margin-bottom:16px}
+.ccard .tags{display:flex;flex-wrap:wrap;gap:6px}
+.ccard .tags span{background:rgba(10,14,23,.6);border:1px solid var(--border);padding:6px 11px;border-radius:6px;font-size:.76rem;font-weight:600;color:var(--text2)}
+.ccard.sports::before{background:linear-gradient(90deg,#ef4444,#f59e0b)}.ccard.sports .count{color:#ef4444}
+.ccard.usa::before{background:linear-gradient(90deg,#3b82f6,#6366f1)}.ccard.usa .count{color:#3b82f6}
+.ccard.uk::before{background:linear-gradient(90deg,#a855f7,#ec4899)}.ccard.uk .count{color:#a855f7}
+.ccard.movies::before{background:linear-gradient(90deg,#f59e0b,#ef4444)}.ccard.movies .count{color:#f59e0b}
+.ccard.kids::before{background:linear-gradient(90deg,#22c55e,#14b8a6)}.ccard.kids .count{color:#22c55e}
+.ccard.news::before{background:linear-gradient(90deg,#14b8a6,#3b82f6)}.ccard.news .count{color:#14b8a6}
+
+/* ===== SPORTS SECTION (stadium BG) ===== */
+.sec-sports{position:relative;padding:100px 24px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(10,14,23,.92) 0%,rgba(10,14,23,.5) 40%,rgba(10,14,23,.5) 60%,rgba(10,14,23,.92) 100%),
+             url('images/backgrounds/sports-bg.jpg') center/cover no-repeat fixed;
+  background-color:#0a0e17;}
+.sec-sports::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 300px at 30% 50%,rgba(34,197,94,.06) 0%,transparent 70%);z-index:0}
+
+/* ===== MOVIES SECTION (theater BG) ===== */
+.sec-movies{position:relative;padding:100px 24px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(10,14,23,.92) 0%,rgba(10,14,23,.45) 40%,rgba(10,14,23,.45) 60%,rgba(10,14,23,.92) 100%),
+             url('images/backgrounds/movies-bg.jpg') center/cover no-repeat fixed;
+  background-color:#0a0e17;}
+.sec-movies::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 300px at 70% 50%,rgba(168,85,247,.06) 0%,transparent 70%);z-index:0}
+
+/* ===== POSTER CARDS (real images) ===== */
+.poster-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.poster-card{width:160px;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);transition:all .4s;animation:posterFloat 6s ease-in-out infinite;box-shadow:0 10px 30px rgba(0,0,0,.5);cursor:default}
+.poster-card:nth-child(2){animation-delay:.4s}.poster-card:nth-child(3){animation-delay:.8s}
+.poster-card:nth-child(4){animation-delay:1.2s}.poster-card:nth-child(5){animation-delay:1.6s}
+.poster-card:nth-child(6){animation-delay:2s}.poster-card:nth-child(7){animation-delay:2.4s}
+.poster-card:hover{transform:translateY(-10px) scale(1.06)!important;z-index:10;box-shadow:0 20px 50px rgba(0,0,0,.7);border-color:var(--blue)}
+.poster-card img{width:100%;height:220px;object-fit:cover;display:block}
+.poster-card .plabel{background:rgba(21,26,37,.9);padding:10px;text-align:center;font-weight:700;font-size:.78rem;color:var(--text2)}
+
+/* Fallback poster when no image */
+.poster-card .pfallback{width:100%;height:220px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--card),#1a1f2e)}
+.poster-card .pfallback.pt1{background:linear-gradient(135deg,#1a1a2e,#16213e)}
+.poster-card .pfallback.pt2{background:linear-gradient(135deg,#1b2a1b,#0f3d0f)}
+.poster-card .pfallback.pt3{background:linear-gradient(135deg,#2d1b2d,#4a154b)}
+.poster-card .pfallback.pt4{background:linear-gradient(135deg,#1a2025,#1e3a4a)}
+.poster-card .pfallback.pt5{background:linear-gradient(135deg,#201a10,#3d2e0f)}
+.poster-card .pfallback.pt6{background:linear-gradient(135deg,#1a1515,#3d1a1a)}
+.poster-card .pfallback.pt7{background:linear-gradient(135deg,#151a20,#1a2d3d)}
+
+/* ===== SPORTS LEAGUE CARDS ===== */
+.league-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;max-width:1000px;margin:40px auto 0;position:relative;z-index:1}
+.league-card{background:rgba(21,26,37,.8);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--r);padding:24px 22px;text-align:center;min-width:150px;transition:all .35s;animation:float 5s ease-in-out infinite}
+.league-card:nth-child(2){animation-delay:.5s}.league-card:nth-child(3){animation-delay:1s}
+.league-card:nth-child(4){animation-delay:1.5s}.league-card:nth-child(5){animation-delay:2s}
+.league-card:hover{transform:translateY(-8px)!important;border-color:var(--green);box-shadow:0 16px 40px rgba(34,197,94,.2)}
+.league-card img{width:60px;height:60px;border-radius:12px;object-fit:cover;margin-bottom:10px}
+.league-card .lfallback{font-size:3rem;margin-bottom:8px;display:block}
+.league-card .lname{font-weight:700;font-size:.9rem;color:var(--text)}
+.league-card .ldetail{color:var(--green);font-size:.74rem;margin-top:4px}
+
+/* ===== VOD STATS ===== */
+.vod-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;max-width:800px;margin:36px auto 0;position:relative;z-index:1}
+.vs{text-align:center;background:rgba(21,26,37,.8);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--r);padding:28px 16px;transition:all .35s}
+.vs:hover{transform:translateY(-4px);border-color:var(--purple)}
+.vs .vn{font-size:2.4rem;font-weight:900}
+.vs:nth-child(1) .vn{background:linear-gradient(135deg,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.vs:nth-child(2) .vn{background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.vs:nth-child(3) .vn{background:linear-gradient(135deg,#22c55e,#14b8a6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.vs:nth-child(4) .vn{background:linear-gradient(135deg,#3b82f6,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.vs .vl{color:var(--text2);font-size:.82rem;margin-top:4px}
+
+/* ===== PRICING ===== */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;position:relative;z-index:1}
+.pplan{background:rgba(21,26,37,.85);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:42px 32px;text-align:center;transition:all .35s;position:relative}
+.pplan:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.pplan.feat{border:2px solid var(--blue);animation:glowPulse 4s infinite}
+.pplan.feat .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),#6366f1);color:#fff;font-size:.7rem;font-weight:800;padding:6px 18px;border-radius:14px;letter-spacing:1.2px;text-transform:uppercase;box-shadow:0 4px 16px rgba(59,130,246,.4)}
+.pplan h3{font-size:1.4rem;font-weight:800;margin-bottom:4px}
+.pplan .type{color:var(--muted);font-size:.84rem;margin-bottom:20px}
+.pplan .price{font-size:3.2rem;font-weight:900;letter-spacing:-2px;margin-bottom:2px}
+.pplan .price .currency{font-size:1rem;color:var(--muted);font-weight:500}
+.pplan .price .period{font-size:.95rem;color:var(--muted);font-weight:400}
+.pplan ul{list-style:none;margin:26px 0;text-align:left}
+.pplan ul li{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.88rem;color:var(--text2)}
+.pplan ul li::before{content:' ';margin-right:8px}
+.pplan .btn-plan{display:block;padding:14px;border-radius:28px;text-decoration:none;font-weight:700;font-size:.92rem;transition:all .3s;margin-top:12px}
+.pplan .btn-plan.outline{border:2px solid var(--blue);color:var(--blue)}.pplan .btn-plan.outline:hover{background:var(--blue);color:#fff}
+.pplan.feat .btn-plan.outline{background:linear-gradient(135deg,var(--blue),#6366f1);color:#fff;border:none}.pplan.feat .btn-plan.outline:hover{opacity:.9;transform:scale(1.03)}
+
+/* ===== STEPS ===== */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;position:relative;z-index:1}
+.step{background:rgba(21,26,37,.85);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r);padding:34px 26px;text-align:center;transition:all .35s}
+.step:hover{transform:translateY(-5px);border-color:#334155}
+.step .num{width:54px;height:54px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:1.4rem;color:#fff;margin-bottom:16px}
+.step:nth-child(1) .num{background:linear-gradient(135deg,#3b82f6,#6366f1)}.step:nth-child(2) .num{background:linear-gradient(135deg,#22c55e,#14b8a6)}.step:nth-child(3) .num{background:linear-gradient(135deg,#a855f7,#ec4899)}.step:nth-child(4) .num{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.step h3{font-size:1.05rem;margin-bottom:6px}.step p{color:var(--text2);font-size:.88rem;line-height:1.6}
+
+/* ===== CTA ===== */
+.cta{position:relative;text-align:center;padding:120px 24px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(10,14,23,.85) 0%,rgba(10,14,23,.6) 50%,rgba(10,14,23,.9) 100%),
+             url('images/backgrounds/tvglow-bg.jpg') center/cover no-repeat;
+  background-color:#0a0e17;}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 50%,rgba(59,130,246,.08) 0%,transparent 70%);z-index:0}
+.cta>*{position:relative;z-index:1}
+.cta h2{font-size:2.8rem;font-weight:900;letter-spacing:-1px;margin-bottom:14px}
+.cta p{color:var(--text2);font-size:1.12rem;max-width:500px;margin:0 auto 36px}
+
+/* ===== FOOTER ===== */
+footer{text-align:center;padding:36px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.84rem}
+
+@media(max-width:768px){
+  .hero{padding:140px 16px 80px}.hero h1{font-size:2.1rem;letter-spacing:-1px}
+  .sec,.sec-sports,.sec-movies{padding:60px 16px}.sec-header h2{font-size:1.8rem}
+  .stats-row{gap:28px}.stat .n{font-size:2.2rem}
+  .cgrid,.pgrid,.sgrid{grid-template-columns:1fr}
+  .poster-card{width:120px}.poster-card img,.poster-card .pfallback{height:170px}
+  nav .links{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="inner">
+<div class="logo"><span class="dl">DL</span> <span class="mag">IPTV</span></div>
+<div class="links">
+<a href="#channels">Channels</a><a href="#pricing">Pricing</a><a href="#partner">Partner</a><a href="guide.html"> Setup</a>
+<a href="https://t.me/DL_IPTV" class="btn-nav"> Telegram</a>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="pip"><span class="d"></span> LIVE NOW &mdash; Premier League &middot; UCL &middot; NBA &middot; UFC &middot; La Liga</div>
+<h1>Premium TV<br>for <span class="gr">Ethiopia</span></h1>
+<p class="sub">Partner with DL IPTV. 3,200+ live channels, 2,700+ movies, 580+ TV series in HD &amp; 4K. You sell, set your price, and keep the margin.</p>
+<div class="btns">
+<a href="https://t.me/DL_IPTV" class="btn-grad">  Get Free Demo</a>
+<a href="#channels" class="btn-ghost">  Channel List</a>
+</div>
+<div class="devices anim d4">
+<div class="device">  Smart TV</div>
+<div class="device">  Phone</div>
+<div class="device">  Firestick</div>
+<div class="device">  PC / Web</div>
+</div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+<div class="ticker">
+<span class="live"> LIVE</span> <span>Premier League <span class="lg">Sky Sports</span></span>
+<span>Champions League <span class="lg">TNT Sports</span></span>
+<span class="live"> LIVE</span> <span>NBA <span class="lg">ESPN</span></span>
+<span>UFC <span class="lg">TNT Sports</span></span>
+<span>La Liga <span class="lg">beIN Sports</span></span>
+<span>F1 <span class="lg">Sky Sports F1</span></span>
+<span>Bundesliga <span class="lg">beIN Sports</span></span>
+<span>Serie A <span class="lg">TNT Sports</span></span>
+<span class="live"> LIVE</span> <span>Premier League <span class="lg">Sky Sports</span></span>
+<span>Champions League <span class="lg">TNT Sports</span></span>
+<span class="live"> LIVE</span> <span>NBA <span class="lg">ESPN</span></span>
+<span>UFC <span class="lg">TNT Sports</span></span>
+<span>La Liga <span class="lg">beIN Sports</span></span>
+<span>F1 <span class="lg">Sky Sports F1</span></span>
+</div>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+<div class="stat anim d1"><div class="n s1">3,200<span style="font-size:1.2rem">+</span></div><div class="l">Live TV Channels</div></div>
+<div class="stat anim d2"><div class="n s2">2,700<span style="font-size:1.2rem">+</span></div><div class="l">Movies On Demand</div></div>
+<div class="stat anim d3"><div class="n s3">580<span style="font-size:1.2rem">+</span></div><div class="l">TV Series Box Sets</div></div>
+<div class="stat anim d4"><div class="n s4">4K HDR</div><div class="l">Ultra HD Quality</div></div>
+</div>
+
+<!-- NETWORK BADGES (use img if available, fallback to colored badge) -->
+<div class="nets">
+<div class="nb anim d1"><img src="images/networks/sky_sports.png" class="ni" alt="SKY SPORTS"></div>
+<div class="nb anim d1"><img src="images/networks/tnt_sports.png" class="ni" alt="TNT SPORTS"></div>
+<div class="nb anim d2"><img src="images/networks/bein_sports.png" class="ni" alt="beIN SPORTS"></div>
+<div class="nb anim d2"><img src="images/networks/espn.png" class="ni" alt="ESPN"></div>
+<div class="nb anim d2"><img src="images/networks/bbc.png" class="ni" alt="BBC"></div>
+<div class="nb anim d3"><img src="images/networks/hbo.png" class="ni" alt="HBO"></div>
+<div class="nb anim d3"><img src="images/networks/cnn.png" class="ni" alt="CNN"></div>
+<div class="nb anim d3"><img src="images/networks/fox.png" class="ni" alt="FOX"></div>
+<div class="nb anim d4"><img src="images/networks/nbc.png" class="ni" alt="NBC"></div>
+<div class="nb anim d4"><img src="images/networks/disney.png" class="ni" alt="DISNEY"></div>
+<div class="nb anim d4"><img src="images/networks/nickelodeon.png" class="ni" alt="NICKELODEON"></div>
+<div class="nb anim d5"><img src="images/networks/cartoon_network.png" class="ni" alt="CARTOON NETWORK"></div>
+<div class="nb anim d5"><img src="images/networks/showtime.png" class="ni" alt="SHOWTIME"></div>
+<div class="nb anim d5"><img src="images/networks/discovery.png" class="ni" alt="DISCOVERY"></div>
+<div class="nb anim d5"><img src="images/networks/nat_geo.png" class="ni" alt="NAT GEO"></div>
+<div class="nb anim d6"><img src="images/networks/dazn.png" class="ni" alt="DAZN"></div>
+<div class="nb anim d6"><img src="images/networks/eurosport.png" class="ni" alt="EUROSPORT"></div>
+<div class="nb anim d6"><img src="images/networks/amc.png" class="ni" alt="AMC"></div>
+<div class="nb anim d6"><img src="images/networks/starz.png" class="ni" alt="STARZ"></div>
+<div class="nb anim d6"><img src="images/networks/cbs.png" class="ni" alt="CBS"></div>
+</div>
+
+<!-- CHANNEL CATEGORIES -->
+<section class="sec" id="channels">
+<div class="sec-header"><span class="tag">Content Library</span><h2>What Your Customers Watch</h2><p>Every major league. Every premium network. All in one subscription.</p></div>
+<div class="cgrid">
+<div class="ccard sports anim d1"><span class="emoji"></span><h3>Live Sports</h3><div class="count">853+ Channels &mdash; Every League, Every Match</div><div class="tags"><span>Sky Sports</span><span>TNT Sports</span><span>beIN Sports</span><span>ESPN</span><span>FOX Sports</span><span>DAZN</span><span>Eurosport</span><span>UFC Fight Pass</span><span>NBA TV</span><span>Premier League TV</span></div></div>
+<div class="ccard usa anim d2"><span class="emoji"></span><h3>USA Channels</h3><div class="count">1,182 Channels</div><div class="tags"><span>ABC</span><span>CBS</span><span>NBC</span><span>FOX</span><span>HBO</span><span>Showtime</span><span>Starz</span><span>CNN</span><span>AMC</span><span>Comedy Central</span><span>FX</span></div></div>
+<div class="ccard uk anim d3"><span class="emoji"></span><h3>UK Entertainment</h3><div class="count">143 Channels</div><div class="tags"><span>BBC One</span><span>BBC Two</span><span>ITV</span><span>Channel 4</span><span>Sky Atlantic</span><span>Sky Max</span><span>E4</span><span>Film4</span><span>Dave</span><span>Gold</span></div></div>
+<div class="ccard movies anim d4"><span class="emoji"></span><h3>Movies On Demand</h3><div class="count">2,700+ Titles</div><div class="tags"><span>Latest Blockbusters</span><span>Netflix Originals</span><span>Marvel Universe</span><span>Action</span><span>Comedy</span><span>Horror</span><span>International Cinema</span></div></div>
+<div class="ccard kids anim d5"><span class="emoji"> </span><h3>Kids &amp; Family</h3><div class="count">28+ Channels</div><div class="tags"><span>Cartoon Network</span><span>Nickelodeon</span><span>Disney Channel</span><span>Disney Junior</span><span>CBeebies</span><span>CBBC</span><span>BabyTV</span></div></div>
+<div class="ccard news anim d6"><span class="emoji"></span><h3>News &amp; Docs</h3><div class="count">64+ Channels</div><div class="tags"><span>CNN</span><span>BBC News</span><span>Sky News</span><span>Al Jazeera</span><span>Bloomberg</span><span>CNBC</span><span>Nat Geo</span><span>Discovery</span></div></div>
+</div>
+</section>
+
+<!-- SPORTS SECTION (stadium background) -->
+<section class="sec-sports" id="sports">
+<div class="sec-header" style="position:relative;z-index:1"><span class="tag" style="background:rgba(34,197,94,.08);color:var(--green)">  Live Sports</span><h2>Every Match. Every League.</h2><p style="max-width:620px">Premier League. Champions League. La Liga. NBA. UFC. F1. Cricket. Rugby. All live in HD &amp; 4K.</p></div>
+<div class="league-grid">
+<div class="league-card anim d1">
+<img src="images/sports/premierleague.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt=""><span class="lfallback" style="display:none"></span>
+<div class="lname">Premier<br>League</div><div class="ldetail">All 380 Matches</div>
+</div>
+<div class="league-card anim d2">
+<img src="images/sports/championsleague.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt=""><span class="lfallback" style="display:none"></span>
+<div class="lname">Champions<br>League</div><div class="ldetail">Every Stage Live</div>
+</div>
+<div class="league-card anim d3">
+<img src="images/sports/nba.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt=""><span class="lfallback" style="display:none"></span>
+<div class="lname">NBA<br>Playoffs</div><div class="ldetail">All Games HD</div>
+</div>
+<div class="league-card anim d4">
+<img src="images/sports/ufc.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt=""><span class="lfallback" style="display:none"></span>
+<div class="lname">UFC<br>Fight Night</div><div class="ldetail">PPV Events Live</div>
+</div>
+<div class="league-card anim d5">
+<img src="images/sports/f1.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" alt=""><span class="lfallback" style="display:none"></span>
+<div class="lname">Formula 1</div><div class="ldetail">Every Race</div>
+</div>
+</div>
+</section>
+
+<!-- MOVIES SECTION (theater background + posters) -->
+<section class="sec-movies" id="movies">
+<div class="sec-header" style="position:relative;z-index:1"><span class="tag" style="background:rgba(168,85,247,.08);color:var(--purple)">  On Demand</span><h2>Blockbusters &amp; Box Sets</h2><p style="max-width:580px">2,700+ movies. 580+ complete TV series. All in HD &amp; 4K. Updated weekly.</p></div>
+
+<div class="poster-grid">
+<div class="poster-card anim d1">
+<img src="images/posters/got.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt1" style="display:none"></div>
+<div class="plabel">Game of Thrones</div>
+</div>
+<div class="poster-card anim d2">
+<img src="images/posters/breakingbad.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt2" style="display:none"></div>
+<div class="plabel">Breaking Bad</div>
+</div>
+<div class="poster-card anim d2">
+<img src="images/posters/strangerthings.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt3" style="display:none"></div>
+<div class="plabel">Stranger Things</div>
+</div>
+<div class="poster-card anim d3">
+<img src="images/posters/squidgame.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt4" style="display:none"></div>
+<div class="plabel">Squid Game</div>
+</div>
+<div class="poster-card anim d3">
+<img src="images/posters/thelastofus.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt5" style="display:none"></div>
+<div class="plabel">The Last of Us</div>
+</div>
+<div class="poster-card anim d4">
+<img src="images/posters/peakyblinders.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt6" style="display:none"></div>
+<div class="plabel">Peaky Blinders</div>
+</div>
+<div class="poster-card anim d4">
+<img src="images/posters/theoffice.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt=""><div class="pfallback pt7" style="display:none"></div>
+<div class="plabel">The Office</div>
+</div>
+</div>
+
+<div class="vod-stats">
+<div class="vs anim d5"><div class="vn">2.7K</div><div class="vl">Movies in HD &amp; 4K</div></div>
+<div class="vs anim d5"><div class="vn">580</div><div class="vl">Complete TV Series</div></div>
+<div class="vs anim d6"><div class="vn">4K</div><div class="vl">Ultra HD Quality</div></div>
+<div class="vs anim d6"><div class="vn">99.5%</div><div class="vl">Uptime Guarantee</div></div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="sec" id="pricing">
+<div class="sec-header"><span class="tag">Wholesale Pricing</span><h2>You Set Retail. 100% Margin.</h2><p>Your cost. Sell at any price. We never sell to end users.</p></div>
+<div class="pgrid">
+<div class="pplan anim d1"><h3>Starter</h3><div class="type">Starter</div><div class="price"><span class="currency">ETB</span> 800<span class="period"> /mo</span></div><ul><li> UK + Sports + Movies</li><li> ~500 channels</li><li> VOD Movies</li><li> HD Quality</li><li> 1 Stream</li></ul><a href="https://t.me/DL_IPTV" class="btn-plan outline">Demo</a></div>
+<div class="pplan feat anim d2"><span class="badge">Best Seller</span><h3>Family</h3><div class="type">Family</div><div class="price"><span class="currency">ETB</span> 1,200<span class="period"> /mo</span></div><ul><li> ALL 3,200+ Channels</li><li> Full VOD: Movies + Series</li><li> FHD / 4K</li><li> 1 Stream</li><li> Kids-Safe</li></ul><a href="https://t.me/DL_IPTV" class="btn-plan outline">Demo</a></div>
+<div class="pplan anim d3"><h3>Premium</h3><div class="type">Premium</div><div class="price"><span class="currency">ETB</span> 1,500<span class="period"> /mo</span></div><ul><li> Everything + Adult</li><li> Full VOD</li><li> 4K Ultra HD</li><li> 5 Streams</li><li> Priority</li></ul><a href="https://t.me/DL_IPTV" class="btn-plan outline">Demo</a></div>
+</div>
+</section>
+
+<!-- STEPS -->
+<section class="sec" id="partner">
+<div class="sec-header"><span class="tag">Partnership</span><h2>Simple. Profitable. Scalable.</h2><p>You sell. We deliver. Zero inventory, zero tech, pure margin.</p></div>
+<div class="sgrid">
+<div class="step anim d1"><div class="num">1</div><h3>You Sell</h3><p>Add IPTV to your platform. Set your price. Use Telebirr, CBE.</p></div>
+<div class="step anim d2"><div class="num">2</div><h3>We Activate</h3><p>Account created in minutes. Username + password delivered.</p></div>
+<div class="step anim d3"><div class="num">3</div><h3>They Watch</h3><p>Smart TV, phone, Firestick, PC. Works everywhere.</p></div>
+<div class="step anim d4"><div class="num">4</div><h3>You Profit</h3><p>Recurring monthly revenue. Scale to thousands.</p></div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Ready to Launch IPTV?</h2>
+<p>DM us on Telegram. Free demo, channel catalog, and partnership PDF in minutes.</p>
+<a href="https://t.me/DL_IPTV" class="btn-grad" style="font-size:1.15rem;padding:20px 48px"> Telegram &mdash; Start Now</a>
+<p style="margin-top:24px;font-size:.84rem;color:var(--muted)">Wholesale only. Partners only.</p>
+</section>
+
+<footer>
+<p>DL IPTV &copy; 2026 &mdash; Wholesale Content Provider &mdash; Ethiopia</p>
+</footer>
+
+</body>
+</html>

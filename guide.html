@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Guide — DL IPTV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e17; --card: #151a25; --border: #1e2736;
+  --text: #edf2f7; --text2: #b0bec5; --muted: #6b7d8e;
+  --blue: #3b82f6; --red: #ef4444; --green: #22c55e;
+  --purple: #a855f7; --amber: #f59e0b;
+  --r: 18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.anim{animation:fadeUp .6s ease-out both}
+.anim.d1{animation-delay:.1s}.anim.d2{animation-delay:.2s}.anim.d3{animation-delay:.3s}.anim.d4{animation-delay:.4s}
+
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,14,23,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+nav .logo{font-size:1.35rem;font-weight:900;letter-spacing:-.5px;display:flex;align-items:center;gap:5px}
+nav .logo .dl{background:linear-gradient(135deg,#3b82f6,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav .logo .mag{background:linear-gradient(135deg,#ef4444,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+
+
+nav a{color:var(--text2);text-decoration:none;font-weight:500;font-size:.86rem;transition:color .2s}
+nav a:hover{color:#fff}
+
+.hero{text-align:center;padding:130px 24px 60px;background:radial-gradient(ellipse 500px 200px at 50% -10%,rgba(59,130,246,.06) 0%,transparent 70%),var(--bg)}
+.hero .icon{font-size:3.5rem;margin-bottom:16px;display:block}
+.hero h1{font-size:2.4rem;font-weight:900;letter-spacing:-1px;margin-bottom:10px}
+.hero p{color:var(--text2);font-size:1rem;max-width:500px;margin:0 auto}
+
+.container{max-width:900px;margin:0 auto;padding:0 24px 80px}
+
+/* Tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px;position:sticky;top:80px;z-index:10;padding:12px 0;background:var(--bg)}
+.tab{padding:12px 24px;border-radius:26px;font-weight:600;font-size:.85rem;border:1px solid var(--border);background:var(--card);color:var(--text2);cursor:pointer;transition:all .25s;text-decoration:none;display:flex;align-items:center;gap:8px}
+.tab:hover{border-color:#334155;color:#fff}
+.tab .emoji{font-size:1.2rem}
+
+/* Device Cards */
+.device-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px 32px;margin-bottom:60px;scroll-margin-top:120px}
+.device-card h2{font-size:1.6rem;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.device-card h2 .dev-icon{font-size:2rem}
+.device-card .subtitle{color:var(--muted);font-size:.9rem;margin-bottom:28px}
+
+.step{display:flex;gap:16px;margin-bottom:28px;align-items:flex-start}
+.step-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:2px}
+.step:nth-child(odd) .step-num{background:linear-gradient(135deg,var(--blue),#6366f1)}
+.step:nth-child(even) .step-num{background:linear-gradient(135deg,var(--green),#14b8a6)}
+.step-content h4{font-size:.95rem;margin-bottom:4px;color:var(--text)}
+.step-content p{color:var(--text2);font-size:.88rem}
+.step-content code{background:#0d1119;border:1px solid var(--border);padding:2px 8px;border-radius:4px;font-size:.8rem;color:#4ade80}
+.step-content a{color:var(--blue);text-decoration:none;font-weight:600}
+.step-content a:hover{text-decoration:underline}
+
+.app-box{background:#0d1119;border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:16px 0}
+.app-box h4{font-size:.9rem;margin-bottom:8px;color:#4ade80}
+.app-box .app-list{display:flex;flex-wrap:wrap;gap:8px}
+.app-box .app{background:var(--card);border:1px solid var(--border);padding:8px 16px;border-radius:20px;font-size:.82rem;font-weight:600;color:var(--text2);display:flex;align-items:center;gap:6px}
+
+.m3u-box{background:linear-gradient(135deg,rgba(34,197,94,.06),rgba(59,130,246,.06));border:1px solid rgba(34,197,94,.2);border-radius:12px;padding:20px 24px;margin:20px 0}
+.m3u-box code{display:block;background:#0d1119;padding:14px 18px;border-radius:8px;font-size:.8rem;color:#4ade80;word-break:break-all;margin-top:8px;border:1px solid var(--border)}
+
+.tip{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:10px;padding:14px 18px;margin-top:20px;font-size:.84rem;color:var(--amber)}
+.tip::before{content:'  TIP: ';font-weight:700;color:#f59e0b}
+
+footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+
+@media(max-width:768px){
+  .hero{padding:110px 16px 40px}.hero h1{font-size:1.8rem}
+  .tab{padding:10px 16px;font-size:.78rem}
+  .device-card{padding:24px 18px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="inner">
+<div class="logo"><span class="dl">DL</span> <span class="mag">IPTV</span></div>
+<a href="landing_page.html">  Back to DL IPTV</a>
+</div>
+</nav>
+
+<section class="hero">
+<span class="icon"></span>
+<h1>Setup Guide</h1>
+<p>Follow these steps to start watching IPTV on any device in under 5 minutes.</p>
+</section>
+
+<div class="container">
+<div class="tabs">
+<a href="#android-phone" class="tab"><span class="emoji"></span> Android Phone</a>
+<a href="#iphone" class="tab"><span class="emoji"></span> iPhone</a>
+<a href="#android-tv" class="tab"><span class="emoji"></span> Android TV</a>
+<a href="#firestick" class="tab"><span class="emoji"></span> Firestick</a>
+<a href="#pc" class="tab"><span class="emoji"></span> PC / Web</a>
+</div>
+
+<!-- ANDROID PHONE -->
+<div class="device-card anim d1" id="android-phone">
+<h2><span class="dev-icon"></span> Android Phone / Tablet</h2>
+<div class="subtitle">Works on Samsung, Xiaomi, Tecno, Infinix, and all Android devices.</div>
+
+<div class="step"><div class="step-num">1</div><div class="step-content"><h4>Install an IPTV Player App</h4><p>Open Google Play Store and download one of these free apps:</p>
+<div class="app-box"><h4>  Recommended Apps</h4><div class="app-list">
+<span class="app"> TiviMate</span><span class="app"> IPTV Smarters Pro</span><span class="app"> Televizo</span><span class="app"> XCIPTV Player</span></div></div></div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content"><h4>Open the App &amp; Add Your Playlist</h4><p>After opening the app, choose <strong>"Add Playlist"</strong> or <strong>"Add User"</strong>. You will be asked for:</p>
+<div class="m3u-box">
+<strong style="color:var(--text)">Option A — M3U URL (Recommended)</strong>
+<code>https://dl321dl.top/get.php?username=YOUR_USERNAME&password=YOUR_PASSWORD&type=m3u_plus&output=hls</code>
+<strong style="color:var(--text);display:block;margin-top:14px">Option B — Xtream Codes API</strong>
+<p style="color:var(--text2);font-size:.84rem;margin-top:4px">Server: <code>https://dl321dl.top</code><br>Username + Password from your DM</p>
+</div></div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content"><h4>Wait for Channels to Load</h4><p>The app will download the channel list. This takes 10-30 seconds. After that, you're ready to watch!</p></div></div>
+
+<div class="tip">For the best experience, use <strong>TiviMate</strong> — it has the smoothest interface and supports EPG (TV Guide).</div>
+</div>
+
+<!-- iPHONE -->
+<div class="device-card anim d2" id="iphone">
+<h2><span class="dev-icon"></span> iPhone / iPad</h2>
+<div class="subtitle">Works on all iPhones running iOS 14 or newer.</div>
+
+<div class="step"><div class="step-num">1</div><div class="step-content"><h4>Install an IPTV Player from the App Store</h4><p>Open the App Store and search for one of these:</p>
+<div class="app-box"><h4>  Recommended Apps</h4><div class="app-list">
+<span class="app"> Smarters Player Lite</span><span class="app"> IPTVX</span><span class="app"> GSE SMART IPTV</span><span class="app"> Flex IPTV</span></div></div></div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content"><h4>Add Your Playlist</h4><p>Open the app, tap <strong>"Add Playlist"</strong> or the <strong>+</strong> button, and enter your M3U URL:</p>
+<div class="m3u-box">
+<strong style="color:var(--text)">M3U Playlist URL</strong>
+<code>https://dl321dl.top/get.php?username=YOUR_USERNAME&password=YOUR_PASSWORD&type=m3u_plus&output=hls</code>
+</div></div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content"><h4>Start Streaming</h4><p>The channel list loads automatically. Tap any channel to start watching. Some apps let you swipe left/right to change channels.</p></div></div>
+
+<div class="tip">IPTVX has the best Apple TV-like experience on iPhone. Worth the few birr for the premium version.</div>
+</div>
+
+<!-- ANDROID TV -->
+<div class="device-card anim d3" id="android-tv">
+<h2><span class="dev-icon"></span> Android TV / Google TV</h2>
+<div class="subtitle">Works on Sony, TCL, Hisense, Mi TV, Nokia, and all Android TV boxes.</div>
+
+<div class="step"><div class="step-num">1</div><div class="step-content"><h4>Install TiviMate or IPTV Smarters</h4><p>Open the <strong>Google Play Store</strong> on your TV. Search for and install:</p>
+<div class="app-box"><h4>  Best for TV</h4><div class="app-list">
+<span class="app"> TiviMate (Best for TV)</span><span class="app"> IPTV Smarters Pro</span><span class="app"> Televizo</span><span class="app"> OTT Navigator</span></div></div></div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content"><h4>Add Your Playlist via Remote</h4><p>Open the app, go to <strong>Settings → Playlists → Add Playlist</strong>, and type your M3U URL using the remote or use <strong>Xtream Codes</strong>:</p>
+<div class="m3u-box">
+<strong style="color:var(--text)">Xtream Codes (Easier on TV remote)</strong>
+<p style="color:var(--text2);font-size:.84rem;margin-top:6px">
+Server URL: <code>https://dl321dl.top</code><br>
+Username: <code>YOUR_USERNAME</code><br>
+Password: <code>YOUR_PASSWORD</code>
+</p>
+</div></div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content"><h4>Enable EPG (TV Guide)</h4><p>In TiviMate, go to <strong>Settings → EPG → Assign EPG</strong>. This gives you a full TV guide showing what's playing now and next on every channel.</p></div></div>
+
+<div class="tip">TiviMate Premium (one-time ~$10 via Play Store) unlocks the full TV guide, recording, and favorites. The free version works great too.</div>
+</div>
+
+<!-- FIRESTICK -->
+<div class="device-card anim d4" id="firestick">
+<h2><span class="dev-icon"></span> Amazon Firestick</h2>
+<div class="subtitle">Works on all Firestick models (Lite, 4K, 4K Max, Cube).</div>
+
+<div class="step"><div class="step-num">1</div><div class="step-content"><h4>Enable Apps from Unknown Sources</h4><p>Go to <strong>Settings → My Fire TV → Developer Options</strong> and turn ON <strong>"Apps from Unknown Sources"</strong> and <strong>"ADB Debugging"</strong>.</p></div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content"><h4>Install Downloader App</h4><p>Search for <strong>"Downloader"</strong> in the Amazon Appstore (orange icon). Install it. This lets you download apps from the web.</p></div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content"><h4>Download TiviMate or IPTV Smarters</h4><p>Open Downloader and enter one of these URLs:</p>
+<div class="app-box"><h4>  Download Links (type in Downloader)</h4><div class="app-list">
+<span class="app">TiviMate: <code style="color:var(--blue);background:none;border:none;padding:0">tivimates.com</code></span>
+<span class="app">Smarters: <code style="color:var(--blue);background:none;border:none;padding:0">iptvsmarters.com/firestick</code></span>
+</div></div>
+<p style="color:var(--text2);font-size:.84rem;margin-top:10px">Download the APK file, then tap <strong>Install</strong> when prompted.</p></div></div>
+
+<div class="step"><div class="step-num">4</div><div class="step-content"><h4>Add Your Playlist</h4><p>Open the installed app, choose <strong>"Xtream Codes API"</strong> login and enter:</p>
+<div class="m3u-box">
+<strong style="color:var(--text)">Xtream Codes Login</strong>
+<p style="color:var(--text2);font-size:.84rem;margin-top:6px">
+Server: <code>https://dl321dl.top</code><br>
+Username: <code>YOUR_USERNAME</code><br>
+Password: <code>YOUR_PASSWORD</code>
+</p>
+</div></div></div>
+
+<div class="tip">TiviMate on Firestick is the gold standard — fast, beautiful interface, full EPG support. Install it first.</div>
+</div>
+
+<!-- PC / WEB -->
+<div class="device-card anim d4" id="pc">
+<h2><span class="dev-icon"></span> PC / Laptop / Web Browser</h2>
+<div class="subtitle">Works on Windows, Mac, Linux — any computer with a modern browser. No download required.</div>
+
+<div class="step"><div class="step-num">1</div><div class="step-content"><h4>Open Your Web Browser</h4><p>Use <strong>Google Chrome</strong>, <strong>Firefox</strong>, <strong>Edge</strong>, or <strong>Safari</strong>. Chrome works best for streaming.</p></div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content"><h4>Use a Web-Based IPTV Player</h4><p>These players work directly in your browser — nothing to install:</p>
+<div class="app-box"><h4>  Web Players (click to open)</h4><div class="app-list">
+<span class="app"><a href="https://open-player.vercel.app" target="_blank" style="color:var(--blue);text-decoration:none">  Open Player</a></span>
+<span class="app"><a href="https://www.hlsplayer.net" target="_blank" style="color:var(--blue);text-decoration:none">  HLS Player</a></span>
+<span class="app"><a href="https://www.videolan.org/vlc/" target="_blank" style="color:var(--blue);text-decoration:none">  VLC Media Player</a></span>
+</div></div></div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content"><h4>Paste Your M3U URL</h4><p>Copy your M3U playlist link below, paste it into the web player, and click <strong>Load</strong> or <strong>Play</strong>:</p>
+<div class="m3u-box">
+<strong style="color:var(--text)">M3U Playlist URL</strong>
+<code>https://dl321dl.top/get.php?username=YOUR_USERNAME&password=YOUR_PASSWORD&type=m3u_plus&output=hls</code>
+</div></div></div>
+
+<div class="step"><div class="step-num">4</div><div class="step-content"><h4>Option: Desktop App (VLC Media Player)</h4><p>For a better experience, download <strong>VLC Media Player</strong> (free) from <a href="https://videolan.org" target="_blank">videolan.org</a>. Then:</p>
+<p style="color:var(--text2);font-size:.88rem;margin-top:8px">
+   Open VLC → <strong>Media → Open Network Stream</strong><br>
+   Paste your M3U URL → Click <strong>Play</strong><br>
+   VLC will load all channels. Press <strong>Ctrl+L</strong> to see the playlist.
+</p></div></div>
+
+<div class="tip">The web player is the fastest way to test your account. Use VLC for daily watching — it's faster and has better quality controls.</div>
+</div>
+
+</div>
+
+<footer>
+<p>DL IPTV &copy; 2026 &mdash; Need help? DM us on Telegram <a href="https://t.me/DLMAGIPTV" style="color:var(--blue)">@DLMAGIPTV</a></p>
+</footer>
+
+</body>
+</html>

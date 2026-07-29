@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1230"/>
+      <stop offset="55%" stop-color="#141B4D"/>
+      <stop offset="100%" stop-color="#2A1A5E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E0C6"/>
+      <stop offset="100%" stop-color="#00A3FF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#3A2E8C" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#3A2E8C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="200" fill="url(#bg)"/>
+  <circle cx="512" cy="390" r="380" fill="url(#glow)"/>
+
+  <!-- Signal arcs (broadcast) -->
+  <g stroke="url(#accent)" fill="none" stroke-linecap="round">
+    <path d="M 350 300 A 230 230 0 0 1 674 300" stroke-width="16" opacity="0.9"/>
+    <path d="M 395 340 A 165 165 0 0 1 629 340" stroke-width="16" opacity="0.7"/>
+  </g>
+  <circle cx="512" cy="378" r="14" fill="url(#accent)"/>
+
+  <!-- Play triangle badge -->
+  <circle cx="512" cy="470" r="150" fill="#0E1640" stroke="url(#accent)" stroke-width="10"/>
+  <path d="M 465 400 L 585 470 L 465 540 Z" fill="url(#accent)"/>
+
+  <!-- Wordmark -->
+  <text x="512" y="740" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="150" fill="#FFFFFF" letter-spacing="4">DL</text>
+  <text x="512" y="820" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="62" fill="url(#accent)" letter-spacing="18">IPTV</text>
+</svg>

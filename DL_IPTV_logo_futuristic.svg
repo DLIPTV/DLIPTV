@@ -1,0 +1,91 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04050F"/>
+      <stop offset="55%" stop-color="#0A0F2E"/>
+      <stop offset="100%" stop-color="#150A3D"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FFE0"/>
+      <stop offset="50%" stop-color="#00B4FF"/>
+      <stop offset="100%" stop-color="#7A5CFF"/>
+    </linearGradient>
+    <linearGradient id="neon2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF2FD0"/>
+      <stop offset="100%" stop-color="#7A5CFF"/>
+    </linearGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#00FFE0" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00FFE0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="clipRound">
+      <rect x="0" y="0" width="1024" height="1024" rx="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="200" fill="url(#bg)"/>
+
+  <g clip-path="url(#clipRound)">
+    <!-- ambient core glow -->
+    <circle cx="512" cy="440" r="420" fill="url(#core)"/>
+
+    <!-- circuit grid lines -->
+    <g stroke="#2A3A7A" stroke-width="2" opacity="0.35">
+      <line x1="0" y1="180" x2="1024" y2="180"/>
+      <line x1="0" y1="860" x2="1024" y2="860"/>
+      <line x1="150" y1="0" x2="150" y2="1024"/>
+      <line x1="874" y1="0" x2="874" y2="1024"/>
+    </g>
+    <g stroke="#00FFE0" stroke-width="3" opacity="0.5">
+      <path d="M 0 180 L 90 180 L 90 240" fill="none"/>
+      <path d="M 1024 860 L 934 860 L 934 800" fill="none"/>
+      <circle cx="90" cy="240" r="6" fill="#00FFE0"/>
+      <circle cx="934" cy="800" r="6" fill="#00FFE0"/>
+    </g>
+
+    <!-- corner hex accents -->
+    <g opacity="0.55" stroke="url(#neon)" stroke-width="3" fill="none">
+      <polygon points="120,90 150,72 180,90 180,126 150,144 120,126"/>
+      <polygon points="844,880 874,862 904,880 904,916 874,934 844,916"/>
+    </g>
+  </g>
+
+  <!-- Outer rotating-ring style hex frame -->
+  <polygon points="512,240 660,325 660,495 512,580 364,495 364,325"
+           fill="none" stroke="url(#neon)" stroke-width="6" opacity="0.85" filter="url(#softglow)"/>
+  <polygon points="512,270 634,340 634,480 512,550 390,480 390,340"
+           fill="none" stroke="url(#neon2)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Signal arcs -->
+  <g stroke="url(#neon)" fill="none" stroke-linecap="round" filter="url(#softglow)">
+    <path d="M 340 265 A 230 230 0 0 1 684 265" stroke-width="10" opacity="0.9"/>
+    <path d="M 388 300 A 165 165 0 0 1 636 300" stroke-width="10" opacity="0.7"/>
+  </g>
+
+  <!-- Core play badge -->
+  <circle cx="512" cy="410" r="118" fill="#060B22" stroke="url(#neon)" stroke-width="6" filter="url(#glow)"/>
+  <circle cx="512" cy="410" r="118" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.25"/>
+  <path d="M 472 350 L 578 410 L 472 470 Z" fill="url(#neon)" filter="url(#softglow)"/>
+
+  <!-- Wordmark -->
+  <text x="512" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="140" fill="#FFFFFF" letter-spacing="6" filter="url(#softglow)">DL</text>
+  <text x="512" y="770" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="56" fill="url(#neon)" letter-spacing="20">IPTV</text>
+
+  <!-- underline accent -->
+  <rect x="392" y="800" width="240" height="4" fill="url(#neon2)" opacity="0.8"/>
+</svg>

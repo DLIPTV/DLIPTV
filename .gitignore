@@ -1,0 +1,17 @@
+# Ignore dev files
+*.py
+*.pyc
+*.md
+__pycache__/
+.DS_Store
+
+# Ignore data dumps
+lines_files/
+lines.mhtml
+lines_*.txt
+xcms_*.html
+*.json
+*.json.gz
+
+# Keep setup text
+!images/SETUP.txt
