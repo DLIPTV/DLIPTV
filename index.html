@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DL IPTV — Premium IPTV Service | 35,000+ Live Channels in 4K</title>
+  <meta name="description" content="DL IPTV delivers 35,000+ live channels, 150,000+ VODs, and all major sports in HD/4K. Instant activation. 24/7 support via Telegram & WhatsApp." />
+  <meta name="keywords" content="DL IPTV, IPTV subscription, premium IPTV, live sports IPTV, 4K IPTV, IPTV service, best IPTV 2026" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="DL IPTV" />
+  <link rel="canonical" href="https://dliptv.com/" />
+
+  <link rel="preload" as="image" href="hero-bg-generated.png" fetchpriority="high" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dliptv.com/" />
+  <meta property="og:title" content="DL IPTV — Premium IPTV with 35,000+ Channels" />
+  <meta property="og:description" content="Watch live sports, movies, and TV in 4K. Instant activation. Trusted by thousands." />
+  <meta property="og:image" content="https://dliptv.com/logo.png" />
+
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://dliptv.com/" />
+  <meta property="twitter:title" content="DL IPTV — Premium IPTV Service" />
+  <meta property="twitter:description" content="35,000+ live channels. 150,000+ VODs. All sports. 4K quality. Instant setup." />
+  <meta property="twitter:image" content="https://dliptv.com/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dliptv.com/#website",
+        "url": "https://dliptv.com/",
+        "name": "DL IPTV",
+        "description": "Premium IPTV subscription service offering 35,000+ channels, 150,000+ VODs, and live sports in HD/4K.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://dliptv.com/#organization",
+        "name": "DL IPTV",
+        "url": "https://dliptv.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dliptv.com/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["English"],
+          "url": "https://t.me/DL_IPTV"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://dliptv.com/#product",
+        "name": "DL IPTV Premium Subscription",
+        "description": "35,000+ live channels and 150,000+ VODs in 4K/FHD with instant activation.",
+        "brand": { "@type": "Brand", "name": "DL IPTV" },
+        "offers": {
+          "@type": "Offer",
+          "price": "12.00",
+          "priceCurrency": "USD",
+          "url": "https://dliptv.com/#pricing",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "5240",
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@^19.2.3",
+      "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+      "react/": "https://esm.sh/react@^19.2.3/",
+      "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+      "vite": "https://esm.sh/vite@^7.2.7",
+      "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+    }
+  }
+  </script>
+  <script type="module" crossorigin src="assets/index-at51K6X5.js"></script>
+  <link rel="stylesheet" crossorigin href="assets/index-CpZjn0cT.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- DL IPTV Rebranding & Pricing Override -->
+  <script>
+  (function() {
+    const BRAND = 'DL IPTV';
+    const TELEGRAM = 'https://t.me/DL_IPTV';
+    const WHATSAPP = 'https://wa.me/YOURNUMBER'; // Replace with your WhatsApp
+
+    // Pricing — 1 connection base, scale for multi
+    const PRICING = {
+      '1connection': {
+        monthly: '$12',
+        quarterly: '$30',
+        semiannual: '$54',
+        annual: '$96'
+      },
+      '2connection': {
+        monthly: '$18',
+        quarterly: '$45',
+        semiannual: '$81',
+        annual: '$144'
+      }
+    };
+
+    function rebrand(node) {
+      if (node.nodeType === 3) {
+        // Text nodes: replace brand names
+        var t = node.nodeValue;
+        t = t.replace(/NIXATV/gi, BRAND);
+        t = t.replace(/nixatv\.com/gi, 'dliptv.com');
+        t = t.replace(/\+1 647 366 5409/g, '@DL_IPTV on Telegram');
+        t = t.replace(/NIXATV Media/gi, 'DL IPTV');
+        t = t.replace(/\$19\.99/g, PRICING['1connection'].monthly);
+        t = t.replace(/\$49\.99/g, PRICING['1connection'].quarterly);
+        t = t.replace(/\$89\.99/g, PRICING['1connection'].semiannual);
+        t = t.replace(/\$149\.99/g, PRICING['1connection'].annual);
+        // Catch any remaining $XX.99 prices and scale down
+        node.nodeValue = t;
+      }
+      if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
+        // Replace NIXATV logo references
+        if (node.hasAttribute('src') && node.getAttribute('src').indexOf('supabase') !== -1) {
+          node.setAttribute('src', 'logo.png');
+        }
+        // Route "Contact Us" / "Support" links to Telegram
+        if (node.hasAttribute('href')) {
+          var href = node.getAttribute('href');
+          if (href.indexOf('/contact') !== -1 || href.indexOf('/support') !== -1 || href.indexOf('mailto:') !== -1) {
+            node.setAttribute('href', TELEGRAM);
+            node.setAttribute('target', '_blank');
+          }
+          if (href.indexOf('twitter.com/nixatv') !== -1 || href.indexOf('facebook.com/nixatv') !== -1) {
+            node.setAttribute('href', TELEGRAM);
+            node.setAttribute('target', '_blank');
+          }
+        }
+        // Override pricing cards in the DOM
+        if (node.textContent) {
+          var txt = node.textContent;
+          // Detect pricing patterns and replace
+          if (txt.match(/\$\d+\.?\d*/) && (txt.match(/month/i) || txt.match(/year/i) || txt.match(/quarter/i) || txt.match(/connection/i))) {
+            // The Pricing component uses specific classes — let the CSS handle it
+          }
+        }
+        for (var c of node.childNodes) rebrand(c);
+      }
+    }
+
+    // Run multiple times — React renders async
+    function run() {
+      rebrand(document.body);
+    }
+
+    setTimeout(run, 800);
+    setTimeout(run, 2000);
+    setTimeout(run, 4000);
+    setInterval(run, 2000);
+  })();
+
+  // Disable right-click on images only
+  document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+  }, true);
+  </script>
+</body>
+
+</html>
