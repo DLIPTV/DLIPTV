@@ -144,7 +144,7 @@
         }
         if (node.hasAttribute('href')) {
           var h = node.getAttribute('href');
-          if (h.indexOf('/contact') !== -1 || h.indexOf('/support') !== -1 || h.indexOf('mailto:') !== -1) {
+          if (h.indexOf('/support') !== -1 || h.indexOf('mailto:') !== -1) {
             node.setAttribute('href', TELEGRAM);
             node.setAttribute('target', '_blank');
           }
