@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>DL IPTV — Premium IPTV Service | 35,000+ Live Channels in 4K</title>
-  <meta name="description" content="DL IPTV delivers 35,000+ live channels, 150,000+ VODs, and all major sports in HD/4K. Instant activation. 24/7 support via Telegram & WhatsApp." />
+  <title>DL IPTV — Premium IPTV Service | 2,330+ Live Channels in 4K</title>
+  <meta name="description" content="DL IPTV delivers 2,330+ live channels, 49,000+ VODs, and all major sports in HD/4K. Instant activation. 24/7 support via Telegram & WhatsApp." />
   <meta name="keywords" content="DL IPTV, IPTV subscription, premium IPTV, live sports IPTV, 4K IPTV, IPTV service, best IPTV 2026" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="DL IPTV" />
@@ -16,14 +16,14 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dliptv.github.io/DLIPTV/" />
-  <meta property="og:title" content="DL IPTV — Premium IPTV with 35,000+ Channels" />
-  <meta property="og:description" content="Watch live sports, movies, and TV in 4K. Instant activation. Trusted by thousands." />
+  <meta property="og:title" content="DL IPTV — Premium IPTV with 2,330+ Channels" />
+  <meta property="og:description" content="Watch 2,330+ live channels, 49K+ VODs, and live sports in 4K. Free 24hr trial. Telegram @DL_IPTV." />
   <meta property="og:image" content="https://dliptv.github.io/DLIPTV/logo.png" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://dliptv.github.io/DLIPTV/" />
   <meta property="twitter:title" content="DL IPTV — Premium IPTV Service" />
-  <meta property="twitter:description" content="35,000+ live channels. 150,000+ VODs. All sports. 4K quality. Instant setup." />
+  <meta property="twitter:description" content="2,330+ live channels. 49,000+ VODs. All sports. 4K quality. Instant setup." />
   <meta property="twitter:image" content="https://dliptv.github.io/DLIPTV/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
         "@id": "https://dliptv.github.io/DLIPTV/#website",
         "url": "https://dliptv.github.io/DLIPTV/",
         "name": "DL IPTV",
-        "description": "Premium IPTV subscription service offering 35,000+ channels, 150,000+ VODs, and live sports in HD/4K.",
+        "description": "Premium IPTV subscription service offering 2,330+ channels, 49,000+ VODs, and live sports in HD/4K.",
         "inLanguage": "en-US"
       },
       {
@@ -65,7 +65,7 @@
         "@type": "Product",
         "@id": "https://dliptv.github.io/DLIPTV/#product",
         "name": "DL IPTV Premium Subscription",
-        "description": "35,000+ live channels and 150,000+ VODs in 4K/FHD with instant activation.",
+        "description": "2,330+ live channels and 49,000+ VODs in 4K/FHD with instant activation.",
         "brand": { "@type": "Brand", "name": "DL IPTV" },
         "offers": {
           "@type": "Offer",
@@ -104,82 +104,91 @@
 <body>
   <div id="root"></div>
 
-  <!-- DL IPTV Rebranding & Pricing Override -->
+    <!-- DL IPTV Overrides -->
   <script>
   (function() {
     const BRAND = 'DL IPTV';
     const TELEGRAM = 'https://t.me/DL_IPTV';
-    const WHATSAPP = 'https://wa.me/DL_IPTV'; // Replace with your WhatsApp
+    const WHATSAPP = 'https://wa.me/DL_IPTV';
+    const CORRECT_TITLE = 'DL IPTV — Premium IPTV | 2,330+ Channels, 49K+ VOD, 4K Sports';
 
-    // Pricing — 1 connection base, scale for multi
-    const PRICING = {
-      '1connection': {
-        monthly: '$12',
-        quarterly: '$30',
-        semiannual: '$54',
-        annual: '$96'
-      },
-      '2connection': {
-        monthly: '$18',
-        quarterly: '$45',
-        semiannual: '$81',
-        annual: '$144'
+    // Force correct document.title
+    new MutationObserver(function() {
+      if (!document.title.startsWith('DL IPTV')) {
+        document.title = CORRECT_TITLE;
       }
-    };
+    }).observe(document.querySelector('title') || document.head, { childList: true, subtree: true, characterData: true });
+
+    setInterval(function() {
+      if (!document.title.startsWith('DL IPTV')) document.title = CORRECT_TITLE;
+    }, 1000);
 
     function rebrand(node) {
       if (node.nodeType === 3) {
-        // Text nodes: replace brand names
         var t = node.nodeValue;
         t = t.replace(/NIXATV/gi, BRAND);
         t = t.replace(/nixatv\.com/gi, 'dliptv.github.io/DLIPTV');
         t = t.replace(/\+1 647 366 5409/g, '@DL_IPTV on Telegram');
-        t = t.replace(/NIXATV Media/gi, 'DL IPTV');
-        t = t.replace(/\$19\.99/g, PRICING['1connection'].monthly);
-        t = t.replace(/\$49\.99/g, PRICING['1connection'].quarterly);
-        t = t.replace(/\$89\.99/g, PRICING['1connection'].semiannual);
-        t = t.replace(/\$149\.99/g, PRICING['1connection'].annual);
-        // Catch any remaining $XX.99 prices and scale down
+        t = t.replace(/\+1 753 339 0292/g, '@DL_IPTV');
+        t = t.replace(/NIXATV Media/gi, BRAND);
+        t = t.replace(/\+1\s*753\s*339\s*0292/g, '@DL_IPTV');
+        t = t.replace(/\+17533390292/g, '@DL_IPTV');
+        t = t.replace(/35,000\+/g, '2,330+');
+        t = t.replace(/150,000\+/g, '49,000+');
+        t = t.replace(/Contact@DL IPTV\.com/gi, 'support@dliptv.com');
         node.nodeValue = t;
       }
       if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') {
-        // Replace NIXATV logo references
         if (node.hasAttribute('src') && node.getAttribute('src').indexOf('supabase') !== -1) {
           node.setAttribute('src', 'logo.png');
         }
-        // Route "Contact Us" / "Support" links to Telegram
         if (node.hasAttribute('href')) {
-          var href = node.getAttribute('href');
-          if (href.indexOf('/contact') !== -1 || href.indexOf('/support') !== -1 || href.indexOf('mailto:') !== -1) {
+          var h = node.getAttribute('href');
+          if (h.indexOf('/contact') !== -1 || h.indexOf('/support') !== -1 || h.indexOf('mailto:') !== -1) {
             node.setAttribute('href', TELEGRAM);
             node.setAttribute('target', '_blank');
           }
-          if (href.indexOf('twitter.com/nixatv') !== -1 || href.indexOf('facebook.com/nixatv') !== -1) {
-            node.setAttribute('href', TELEGRAM);
+          if (h.indexOf('wa.me/') !== -1 && h.indexOf('DL_IPTV') === -1) {
+            node.setAttribute('href', WHATSAPP);
             node.setAttribute('target', '_blank');
           }
-        }
-        // Override pricing cards in the DOM
-        if (node.textContent) {
-          var txt = node.textContent;
-          // Detect pricing patterns and replace
-          if (txt.match(/\$\d+\.?\d*/) && (txt.match(/month/i) || txt.match(/year/i) || txt.match(/quarter/i) || txt.match(/connection/i))) {
-            // The Pricing component uses specific classes — let the CSS handle it
+          if (h.indexOf('twitter.com/') !== -1 || h.indexOf('facebook.com/') !== -1) {
+            node.setAttribute('href', TELEGRAM);
+            node.setAttribute('target', '_blank');
           }
         }
         for (var c of node.childNodes) rebrand(c);
       }
     }
 
-    // Run multiple times — React renders async
-    function run() {
-      rebrand(document.body);
-    }
+    function run() { rebrand(document.body); }
+    setTimeout(run, 500);
+    setTimeout(run, 1500);
+    setTimeout(run, 3000);
+    setInterval(run, 3000);
 
-    setTimeout(run, 800);
-    setTimeout(run, 2000);
-    setTimeout(run, 4000);
-    setInterval(run, 2000);
+    // Targeted: fix the WhatsApp display number in the contact card
+    setInterval(function() {
+      var spans = document.querySelectorAll('span');
+      for (var i = 0; i < spans.length; i++) {
+        if (spans[i].textContent.match(/17533390292|753.*339.*0292|\+1.*753/)) {
+          spans[i].textContent = '@DL_IPTV';
+        }
+        if (spans[i].textContent.match(/Contact@DL IPTV\.com/i)) {
+          spans[i].textContent = 'support@dliptv.com';
+        }
+      }
+      // Fix the "EMAIL" card that's actually pointing to Telegram
+      var emailCards = document.querySelectorAll('h3');
+      for (var j = 0; j < emailCards.length; j++) {
+        if (emailCards[j].textContent.trim() === 'EMAIL' && emailCards[j].closest('a')) {
+          var link = emailCards[j].closest('a');
+          if (link.href.indexOf('t.me') !== -1) {
+            emailCards[j].textContent = 'TELEGRAM';
+          }
+        }
+      }
+    }, 1500);
   })();
 
   // Disable right-click on images only
