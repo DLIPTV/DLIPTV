@@ -178,6 +178,9 @@
         if (t.match(/Contact@DL IPTV\.com/i) || t.match(/support@dliptv\.com/i)) {
           spans[i].textContent = '@DL_IPTV';
         }
+        if (t.match(/Response within 24h/i) || t.match(/R\u00e9ponse sous 24h/i)) {
+          spans[i].textContent = 'Get help instantly';
+        }
       }
       // Fix the "EMAIL" card → "TELEGRAM"
       var headings = document.querySelectorAll('h3');
